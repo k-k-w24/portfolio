@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kona's Profile</title>
+    <script src="scripts/vendors/pace.js"></script>
+    <link rel="stylesheet" href="styles/loader.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/vendors/css-reset.css" />
+    <link rel="stylesheet" href="styles/vendors/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    
+    <script src="scripts/vendors/gsap.min.js" defer></script>
+
+    <script src="scripts/vendors/swiper-bundle.min.js" defer></script>
+    <script src="scripts/libs/hero-slider.js" defer></script>
+
+    <script src="scripts/vendors/scroll-polyfill.js" defer></script>
+    <script src="scripts/libs/scroll.js" defer></script>
+    
+    <script src="scripts/libs/mobile-menu.js" defer></script>
+
+    <script src="scripts/libs/text-animation.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+<!-- Prism CSS -->
+<link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet" />
+
+  <!-- Prism.js ダークテーマ（黒背景 + カラフル） -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-swift.min.js"></script>
+
+  </head>
+  <body>
+    <div id="global-container">
+      <div id="container">
+        <div class="mobile-menu__cover"></div>
+        <div class="nav-trigger"></div>
+        <header class="header">
+          <div class="header__inner appear up">
+            <div class="logo item">
+              <span class="logo__stay">Kona's</span>
+              <span class="logo__world"> Portfolio</span>
+            </div>
+            <nav class="header__nav">
+              <ul class="header__ul">
+                <li class="header__li item"><a href="index.html">Home</a></li>
+                <li class="header__li item"><a href="profile.html">Profile</a></li>
+                <!-- <li class="header__li item"><a href="test/test.html">Test</a></li> -->
+                <!-- <li class="header__li item"><a class="btn filled" href="#">Contact</a></li> -->
+              </ul>
+            </nav>
+            <button class="mobile-menu__btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+
+          <div id="main-content">
+            <aside class="side left">
+              <div class="side__inner">
+                <!-- <a href="#" class="twitter icon tween-animate-title">Twitter</a>
+                <a href="#" class="fb icon tween-animate-title">Facebook</a> -->
+              </div>
+            </aside>
+            <main>            
+              <section class="profile">
+                <div>
+                  <h2 class="main-title tween-animate-title">
+                   開発スキル詳細①
+                  </h2>
+                  <p class="sub-title tween-animate-title">
+                    API接続・データの加工
+                  </p>
+                </div>
+              
+                  <!-- <div class="profile__btn appear up">
+                    <a href="profile/profile.html" class="btn slide-bg item">もっと詳しく</a>
+                  </div> -->
+                  <p class="sentence">私の1つめの開発経験はAPI接続とレスポンスの加工です。JAVAの経験を活かし、APIへの接続をしました。
+                    実際の現場では、Javaでhttpリクエストからレスポンス、APIデータの加工をしております。エラーハンドリングなども行いました。
+                    以下はSwiftで自分で開発したもので、ほとんどリクエストの加工がありませんが、実際は必要な要素のみを取り出すなど、複雑なものも対応可能です。
+                    例えば、Swiftで開発中のアプリでは、以下のような設定をしています。</p>
+                
+                    <pre><code class="language-swift"> 
+                      //  openAICall.swift
+                      //
+                      //  Created by 加藤小夏 on 2024/09/16.
+                      //
+                      
+                      import Foundation
+                      import SwiftUI
+                      import OpenAI
+                      
+                      extension MaruViewController {
+                          func fetchOpenAIResponse(str: String) async -&gt; String {
+                              print(&quot;OpneAIのAPIが呼ばれました。&quot;)
+                              print(&quot;入力文字列: \(str)&quot;)
+                              let openAI = OpenAI(apiToken: &quot;こちらは私のAPIキーのソースを埋め込んでいます。&quot;)
+                              
+                              guard let message = ChatQuery.ChatCompletionMessageParam(role: .user, content: str+&quot;50文字以内で返して&quot;)
+                              else {
+                                  print(&quot;メッセージ作成に失敗しました&quot;)
+                                  return &quot;メッセージ作成に失敗しました&quot;
+                              }
+                      
+                          
+                              let query = ChatQuery(messages: [message], model: .gpt4, maxTokens: 50)
+                      
+                              do {
+                                  let result = try await openAI.chats(query: query)
+                                  print(result)
+                                  if let content = result.choices.first?.message.content {
+                                      print(&quot;返答内容:\n\(content)&quot;)
+                                  }
+                                  if let firstChoice = result.choices.first {
+                                      switch firstChoice.message {
+                                      case .assistant(let assistantMessage):
+                                          return assistantMessage.content ?? &quot;No response&quot;
+                                      default:
+                                          return &quot;レスポンスの内容が予定外&quot;
+                                      }
+                                  } else {
+                                      return &quot;レスポンスに予定していた内容がない&quot;
+                                  }
+                              } catch {
+                                  return &quot;エラー: \(error.localizedDescription)&quot;
+                              }
+                          }
+                      }
+                      </code></pre>
+                      <p>フロントでのリクエスト送信時</p>
+                      <pre><code class="language-swift">
+                        // リクエスト送信
+                        guard let userData = userDataTextField.text,
+                              let userYear = userYear.text,　　
+                              let userMonth = userMonth.text,
+                              let userDay = userDay.text,
+                              let userGen = userGen.text
+                        else {
+                            resultLabel.text = "入力してください"
+                            return
+                        }
+                        
+                        // APIリクエストを送信
+                        sendDataToAPI(userId: userIdTextField, userYear: userYear, userMonth: userMonth, userDay: userDay, userGen: userGen, userData: userData)
+                        </code></pre>
+                        
+                      <p>呼び出した後のデータ受け取り等</p>
+
+                      <pre><code class="language-swift">
+                        @objc func checkIfFinishedTalking() {
+                            print(&quot;talking timer fired&quot;)
+                            if self.talkString == &quot;&quot; {
+                                // continue listening for a response
+                                pauseTillTalkingIsDone()
+                            } else {
+                                // stop listening and process what was said
+                                DispatchQueue.main.async {
+                                    self.talkingTimer?.invalidate()
+                                    self.talkingTimer = nil
+                                    self.stopListening()
+                                    let usertalk = self.talkString.lowercased()
+                                    print(&quot;User: &quot; + usertalk + &quot;\n&quot;)
+                                    Task {
+                                        let response = await Task.detached {
+                                            return await self.fetchOpenAIResponse(str: usertalk)
+                                        }.value
+                                        self.sendUserMessage(str: response)
+                                    }
+                                    self.talkString = &quot;&quot;
+                                }
+                            }
+                        }
+                        </code></pre>
+              </div>
+              </section>
+              <section class="profile1">
+                <div>
+                  <h2 class="main-title tween-animate-title">
+                    開発スキル②
+                  </h2>
+                  <p class="sub-title tween-animate-title">
+                   CSVについての知識
+                  </p>
+                </div>
+                <p>現場では、csvでの取り込み処理や書き込み処理を基本とし、エラーハンドリングやCSV読み込みの際の留意点などを心得ています。
+                  例えば、現場では50万件のデータを1GBずつ読み込めるようにしました。
+                </p>
+
+              </section>
+              <section class="profile2">
+                <div>
+                  <h2 class="main-title tween-animate-title">
+                    開発スキル③
+                  </h2>
+                  <p class="sub-title tween-animate-title">
+                    データベース接続
+                  </p>
+                </div>
+
+                <p>データベースから取得したデータを加工したり、データをデータベースに送ることができます。
+                </p>
+
+              </section>
+                
+              <!-- <section class="profile1">
+                <div>
+                  <h2 class="main-title tween-animate-title">
+                    その他スキルについては、順次準備中です。
+                  </h2>
+                  <p class="sub-title tween-animate-title">
+                    その他スキルについては、順次準備中です。
+                  </p>
+                </div>
+                <div class="profile__inner">
+                  <div class="profile__item">
+                    <div class="cover-slide hover-darken"> -->
+                      <!-- <div
+                        class="bg-img-zoom img-bg50"
+                        style="background-image: url(images/villa-1.jpg)"
+                      ></div> -->
+                    <!-- </div>
+                    <p class="profile__title">準備中</p>
+                  </div> -->
+                  <!-- <div class="profile__item">
+                    <div class="cover-slide hover-darken"> -->
+                      <!-- <div
+                        class="bg-img-zoom img-bg50"
+                        style="background-image: url(images/villa-2.jpg)"
+                      ></div> -->
+                    <!-- </div>
+                    <p class="profile__title">準備中</p>
+                  </div> -->
+                  <!-- <div class="profile__btn appear up">
+                    <a href="profile/profile.html" class="btn slide-bg item">もっと詳しく</a>
+                  </div> -->
+                <!-- </div>
+              </section> -->
+
+
+
+              <section class="profile">
+                <div>
+                  <h2 class="main-title tween-animate-title">
+                    ポートフォリオ作品2
+                  </h2>
+                  <p class="sub-title tween-animate-title">
+                   作品名まる
+                  </p>
+                </div>
+
+                <p class="sentence">私の2つ目の作品はこちらです。キャラクターが実際に話すことができます。今後より発展させて相談役が正確にできるような作品にしていきたいと思っています。</p>
+                <div class="profile__inner">
+                  <div class="profile__item">
+                    <div class="cover-slide hover-darken">
+                      <div
+                        class="bg-img-zoom img-bg50"
+                        style="background-image: url(images/marunoheya1.png)"
+                      ></div>
+                    </div>
+                    <p class="profile__title"></p>
+                  </div>
+
+                 <!-- <div class="profile__item">
+                  <div class="cover-slide hover-darken">
+                    <div
+                      class="bg-img-zoom img-bg50"
+                      style="background-image: url(images/appno1.png)"
+                    ></div>
+                  </div>
+                  <p class="profile__title"></p>
+                </div> -->
+                <div class="profile__item">
+                  <div class="cover-slide hover-darken">
+                    <div
+                      class="bg-img-zoom img-bg50"
+                      style="background-image: url(images/appno3.png)"
+                    ></div>
+                  </div>
+                  <p class="profile__title"></p>
+                </div>
+                <!-- <div class="profile__item">
+                  <div class="cover-slide hover-darken">
+                    <div
+                      class="bg-img-zoom img-bg50"
+                      style="background-image: url(images/appno3.png)"
+                    ></div>
+                  </div>
+                  <p class="profile__title"></p>
+                </div> -->
+              </div>
+              </section>
+              
+              
+
+              <section class="travel">
+                <div class="travel__inner">
+                  <div class="travel__img cover-slide">
+                    <img class="img-zoom" src="images/profilephoto.png" />
+                  </div>
+                  <div class="travel__texts appear left">
+                    <div class="travel__texts-inner">
+                      <div class="travel__title main-title item">
+                        <span class="purple">プロフィール</span>
+                        <!-- <span>心持</span> -->
+                      </div>
+                      <!-- <div class="travel__sub sub-title item">楽しくワクワク仕事をする。</div> -->
+                      <div class="travel__description item">
+                        <p>加藤 小夏</p>
+                        <p>1995年8月4日生まれ</p>
+                        <p>教員・営業の仕事をへてIT業界へ転職</p>
+                        <p>現在はSwiftを学習中である。今後はJavascriptやフロントの技術も伸ばしつつ</p>
+                        <p>バックエンドの開発も続けていきたい。</p>
+                      </div>
+                      <div class="travel__btn item">
+                        <button class="btn filled" onclick="location.href='profile.html'">もっと詳しく</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+            <aside class="side right">
+              <div class="side__inner">
+                <span class="tween-animate-title">&copy; kona</span>
+              </div>
+            </aside>
+        <div class="footer appear up">
+          <div class="logo item">
+            <span class="logo__stay">Kona's</span>
+            <span class="logo__world"> Portfolio</span>
+          </div>
+          <nav class="footer__nav">
+            <ul class="footer__ul">
+              <!-- <li class="footer__li item"><a href="#">Service</a></li>
+              <li class="footer__li item"><a href="#">Contact</a></li>
+              <li class="footer__li item"><a href="#">Company</a></li>
+              <li class="footer__li item"><a href="#">Sitemap</a></li> -->
+            </ul>
+            <div class="footer__copyright item">&copy; kona</div>
+          </nav>
+        </div>
+      </div>
+      <nav class="mobile-menu">
+        <div class="logo">
+          <span class="logo__stay">Kona's</span>
+          <span class="logo__world"> Portfolio</span>
+        </div>
+          <ul class="mobile-menu__main">
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="index.html">
+                <span class="main-title">Home</span>
+                <span class="sub-title">ホーム</span>
+              </a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="profile.html">
+                <span class="main-title">Profile</span>
+                <span class="sub-title">プロフィール</span>
+              </a>
+            </li>
+          <!-- <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="test/test.html">
+              <span class="main-title">Test</span>
+              <span class="sub-title">test</span>
+            </a>
+          </li> -->
+        </ul>
+      </nav>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kona's Profile</title>
+    <script src="scripts/vendors/pace.js"></script>
+    <link rel="stylesheet" href="styles/loader.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/vendors/css-reset.css" />
+    <link rel="stylesheet" href="styles/vendors/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    
+    <script src="scripts/vendors/gsap.min.js" defer></script>
+
+    <script src="scripts/vendors/swiper-bundle.min.js" defer></script>
+    <script src="scripts/libs/hero-slider.js" defer></script>
+
+    <script src="scripts/vendors/scroll-polyfill.js" defer></script>
+    <script src="scripts/libs/scroll.js" defer></script>
+    
+    <script src="scripts/libs/mobile-menu.js" defer></script>
+
+    <script src="scripts/libs/text-animation.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+
+  </head>
+  <body>
+    <div id="global-container">
+      <div id="container">
+        <div class="mobile-menu__cover"></div>
+        <div class="nav-trigger"></div>
+        <header class="header">
+          <div class="header__inner appear up">
+            <div class="logo item">
+              <span class="logo__stay">Kona's</span>
+              <span class="logo__world">Portfolio</span>
+            </div>
+            <nav class="header__nav">
+              <ul class="header__ul">
+                <li class="header__li item"><a href="index.html">Home</a></li>
+                <li class="header__li item"><a href="profile.html">Profile</a></li>
+                <li class="header__li item"><a href="mangekyo.html">万華鏡</a></li>
+                <!-- <li class="header__li item"><a href="test/test.html">Test</a></li> -->
+                <!-- <li class="header__li item"><a class="btn filled" href="#">Contact</a></li> -->
+              </ul>
+            </nav>
+            <button class="mobile-menu__btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+        <div id="main-content">
+          <aside class="side left">
+            <div class="side__inner">
+              <!-- <a href="#" class="twitter icon tween-animate-title">Twitter</a>
+              <a href="#" class="fb icon tween-animate-title">Facebook</a> -->
+            </div>
+          </aside>
+
+            
+            <main>
+              <section class="popular">
+                <div class="popular__header">
+                   
+                  <h2 class="main-title tween-animate-title">万華鏡</h2>
+                  <p class="sub-title tween-animate-title">
+                  mangekyo
+                  </p>
+                  <title>万華鏡ジェネレーター</title>
+                  <div class="tooltipBlock">
+                    <p id="toolTip">黒いところに好きな模様を描いてみよう</p>
+                    <button class="tooltipButton color-1">OK</button>
+                  </div>
+                <link rel="stylesheet" href="style.css">
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+                <script src="scripts/mangekyo.js" defer></script>
+                <div id="canvas-container"></div>
+                
+                </div>
+              </section>
+              <section class="emptydesign-container">
+
+                <!-- <div class="emptydesign-container"></div> -->
+              </section>
+            </main>
+            <section class="travel">
+              <div class="travel__inner">
+                <div class="travel__img cover-slide">
+                  <img class="img-zoom" src="images/profile2.png" />
+                </div>
+                <div class="travel__texts appear left">
+                  <div class="travel__texts-inner">
+                    <div class="travel__title main-title item">
+                      <span class="purple">仕事の</span>
+                      <span>考え方</span>
+                    </div>
+                    <!-- <div class="travel__sub sub-title item">楽しくワクワク仕事をする。</div> -->
+                    <div class="travel__description item">
+                      <p>楽しくて、ワクワクする。これが私にとって開発の仕事です</p>
+                      <p>新しい技術がたくさん増えるなか、インプットアウトプットすること</p>
+                      <p>やりがいと楽しみにつながっています。</p>
+                    </div>
+                    <!-- <div class="travel__btn item"> -->
+                      <button class="btn filled" onclick="location.href='profile.html'">もっと詳しく</button>
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </div>
+            </section>
+            <aside class="side right">
+              <div class="side__inner">
+                <span class="tween-animate-title">&copy; kona</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+        <div class="footer appear up">
+          <div class="logo item">
+            <span class="logo__stay">Kona's</span>
+            <span class="logo__world">Portfolio</span>
+          </div>
+          <nav class="footer__nav">
+            <ul class="footer__ul">
+              <!-- <li class="footer__li item"><a href="#">Service</a></li>
+              <li class="footer__li item"><a href="#">Contact</a></li>
+              <li class="footer__li item"><a href="#">Company</a></li>
+              <li class="footer__li item"><a href="#">Sitemap</a></li> -->
+            </ul>
+            <div class="footer__copyright item">&copy; kona</div>
+          </nav>
+        </div>
+      </div>
+      <nav class="mobile-menu">
+        <div class="logo">
+          <span class="logo__stay">Kona's</span>
+          <span class="logo__world">Portfolio</span>
+        </div>
+
+        <ul class="mobile-menu__main">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="index.html">
+              <span class="main-title">Home</span>
+              <span class="sub-title">ホーム</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="profile.html">
+              <span class="main-title">Profile</span>
+              <span class="sub-title">プロフィール</span>
+            </a>
+          </li>
+          <!-- <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="test/test.html">
+              <span class="main-title">Test</span>
+              <span class="sub-title">test</span>
+            </a>
+          </li> -->
+        </ul>
+      </nav>
+    </div>  
+  </body>
+</html>
