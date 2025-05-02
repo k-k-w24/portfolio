@@ -1,0 +1,354 @@
+.l-footer__links,.l-footer__bottom {
+    background-color: #fafafa
+}
+
+.l-footer__links *,.l-footer__bottom * {
+    line-height: normal;
+    letter-spacing: normal
+}
+
+.l-footer__links *,.l-footer__links *::before,.l-footer__links *::after,.l-footer__bottom *,.l-footer__bottom *::before,.l-footer__bottom *::after {
+    box-sizing: border-box
+}
+
+.l-footer__links a,.l-footer__bottom a {
+    color: inherit;
+    transition: opacity .5s
+}
+
+img[src$=".svg"].footer__ico-blank {
+    width: 14px;
+    height: 14px
+}
+
+.l-footer__links {
+    padding: 10vw 0
+}
+
+@media screen and (min-width: 768px) {
+    .l-footer__links {
+        padding:60px 0
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .l-footer__links:has(+.l-footer__bottom) {
+        padding-bottom:0
+    }
+}
+
+.footer__links {
+    padding: 0 5vw;
+    margin-inline:auto}
+
+@media screen and (min-width: 768px) {
+    .footer__links {
+        padding:0 32px
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .footer__links {
+        display:grid;
+        grid-template-columns: minmax(380px, 1fr) auto;
+        grid-auto-flow: column;
+        gap: 48px;
+        padding: 0 60px
+    }
+}
+
+.footer__links-section+.footer__links-section {
+    margin: 48px 0 0
+}
+
+@media screen and (min-width: 1024px) {
+    .footer__links-section+.footer__links-section {
+        margin:0
+    }
+}
+
+.footer__company-logo {
+    max-width: 108px
+}
+
+@media screen and (min-width: 768px) {
+    .footer__company-logo {
+        max-width:132px
+    }
+}
+
+.footer__company-address {
+    margin-top: 32px
+}
+
+@media screen and (max-width: 1023px) {
+    .footer__company-address {
+        display:none
+    }
+}
+
+.footer__company-address-list {
+    padding: 0;
+    margin: 0
+}
+
+.footer__company-address-list+.footer__company-address-list {
+    margin-top: 32px
+}
+
+.footer__company-address-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700
+}
+
+.footer__company-address-detail {
+    margin: 8px 0 0;
+    font-size: 14px;
+    font-weight: 500
+}
+
+.footer__company-socials {
+    margin-top: 32px
+}
+
+@media screen and (min-width: 768px) {
+    .footer__company-socials {
+        margin-top:36px
+    }
+}
+
+.footer__company-socials-list {
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0
+}
+
+.footer__company-socials-listitem {
+    width: 29px;
+    height: 29px;
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+.footer__company-socials-listitem a {
+    display: inline-block
+}
+
+.footer__company-socials-listitem img {
+    width: 29px;
+    height: 29px;
+    vertical-align: bottom
+}
+
+.footer__company-socials-listitem--skytechblog {
+    display: flex;
+    align-items: center;
+    width: auto
+}
+
+.footer__company-socials-listitem--skytechblog img[src$=".svg"] {
+    width: 122px;
+    max-width: 100%;
+    height: auto;
+    max-height: 20px
+}
+
+@media screen and (min-width: 768px) {
+    .footer__links-section--resources {
+        display:grid;
+        grid-auto-flow: column;
+        gap: 48px
+    }
+}
+
+.footer__resources-category+.footer__resources-category {
+    margin-top: 48px
+}
+
+.footer__resources-category--recruit {
+    margin-top: 48px
+}
+
+@media screen and (min-width: 768px) {
+    .footer__resources-category--recruit {
+        margin-top:0
+    }
+}
+
+.footer__resources-title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #14afeb
+}
+
+.footer__resources-list {
+    padding: 0;
+    margin: 24px 0 0
+}
+
+.footer__resources-item {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    list-style: none
+}
+
+@media screen and (min-width: 768px) {
+    .footer__resources-item {
+        font-size:14px
+    }
+}
+
+.footer__resources-item span {
+    display: block;
+    font-size: 12px;
+    color: #999
+}
+
+.footer__resources-item>a {
+    display: block;
+    padding-block:12px;margin: 0;
+    border-bottom: 1px solid #e4e4e4
+}
+
+@media screen and (min-width: 768px) {
+    .footer__resources-item>a {
+        padding:8px 0;
+        border: none
+    }
+}
+
+.footer__resources-item:first-child>a {
+    padding-top: 0
+}
+
+@media screen and (min-width: 768px) {
+    .footer__resources-item:last-child>a {
+        padding-bottom:0
+    }
+}
+
+.footer__resources-item>a:hover {
+    opacity: .5
+}
+
+.l-footer__links--skypce .footer__links-section--resources {
+    grid-template-columns: 1fr;
+    gap: 0
+}
+
+@media screen and (min-width: 1024px) {
+    .l-footer__links--skypce .footer__links-section--company {
+        display:grid;
+        grid-template-columns: 1fr auto
+    }
+}
+
+.l-footer__links--skypce .footer__company-address {
+    margin-top: 0
+}
+
+.l-footer__bottom {
+    position: relative;
+    padding: 5vw 0
+}
+
+@media screen and (min-width: 768px) {
+    .l-footer__bottom {
+        padding:32px 0
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .l-footer__bottom::before {
+        position:absolute;
+        top: 0;
+        right: 0;
+        bottom: auto;
+        left: 0;
+        width: calc(100% - 64px);
+        margin: auto;
+        content: "";
+        border-top: 1px solid #e4e4e4
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .l-footer__bottom::before {
+        width:calc(100% - 120px)
+    }
+}
+
+.footer__bottom {
+    display: grid;
+    gap: 24px;
+    padding: 0 5vw;
+    margin-inline:auto}
+
+@media screen and (min-width: 768px) {
+    .footer__bottom {
+        padding:0 32px
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .footer__bottom {
+        grid-template-columns:1fr auto;
+        grid-auto-flow: column;
+        align-items: center;
+        padding: 0 60px
+    }
+}
+
+.footer__list {
+    padding: 0;
+    margin: 0;
+    line-height: 32px
+}
+
+.footer__item {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 32px;
+    list-style: none
+}
+
+@media screen and (min-width: 768px) {
+    .footer__item {
+        display:inline-block;
+        margin-right: 24px
+    }
+}
+
+.footer__item>a {
+    line-height: 32px
+}
+
+.footer__item>a:has(.footer__ico-blank) {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center
+}
+
+.footer__item>a:hover {
+    opacity: .5
+}
+
+.footer__copy {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 32px
+}
+
+@media screen and (min-width: 768px) {
+    .footer__copy {
+        text-align:right
+    }
+}

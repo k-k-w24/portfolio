@@ -6,6 +6,7 @@ class MobileMenu {
     this.DOM.container = document.querySelector("#global-container");
     this.eventType = this._getEventType();
     this._addEvent();
+    console.log("mobile.js 読み込まれました");
   }
 
   // 2023/10/02更新: _getEventTypeの内容に動画との差異がありますが、こちらの内容で進めてください。
@@ -23,4 +24,5 @@ class MobileMenu {
     this.DOM.btn.addEventListener(this.eventType, this._toggle.bind(this));
     this.DOM.cover.addEventListener(this.eventType, this._toggle.bind(this));
   }
+
 }
